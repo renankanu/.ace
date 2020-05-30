@@ -1,0 +1,8 @@
+#! /bin/bash
+
+sudo chmod +x ~/.ace/ace
+
+if [ -f /usr/local/bin/ace ]; then
+    sudo rm /usr/local/bin/ace
+fi
+sudo ln -s ~/.ace/ace /usr/local/bin/ace

@@ -15,6 +15,10 @@ sudo chmod +x ~/.ace/install
 ~/.ace/install
 ```
 
+```bash
+ace
+```
+
 #### :alien: Commands
 <span style="color:blue">*init-project* - clone git applications</span>
 

@@ -1,0 +1,30 @@
+#! /bin/bash
+
+# ace init-project
+if [ $1 == 'init-project' ]; then
+    sudo mkdir -p ~/gather-pets-project/application
+    sudo mkdir -p ~/gather-pets-project/data
+    sudo mkdir -p ~/gather-pets-project/logs/application
+
+    sudo chown -R ${USER} ~/gather-pets-project
+fi
+
+# ace clone-project
+if [ $1 == 'clone-project' ]; then
+  git clone https://github.com/renankanu/gather-pets-api.git ~/gather-pets-project/application/gather-pets-api
+fi
+
+# ace install-make
+if [ $1 == 'install-make' ]; then
+  sudo apt install make
+fi
+
+# ace docker-up
+if [ $1 == 'docker-up' ]; then
+    docker-compose up -d
+fi
+
+# ace docker-down
+if [ $1 == 'docker-down' ]; then
+    docker rm -f $(docker ps -aq)
+fi
