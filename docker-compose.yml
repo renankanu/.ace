@@ -28,6 +28,18 @@ services:
         max-size: "10m"
         max-file: "5"
       
+  db:
+    container_name: 'gather-pets-db'
+    image: mysql:latest
+    restart: always
+    volumes:
+      - ~/gather-pets-project/data/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "3306:3306"
+
+
 networks:
   default:
     external:
