@@ -19,7 +19,9 @@ services:
     volumes:
       - ~/gather-pets-project/application/gather-pets-api:/usr/src/app
     working_dir: /usr/src/app
-    command: yarn start
+    # exec for PROD
+    #command: yarn start
+    command: yarn dev
     logging:
       driver: "json-file"
       options:
