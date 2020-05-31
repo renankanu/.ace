@@ -12,6 +12,7 @@ fi
 # ace clone-project
 if [ $1 == 'clone-project' ]; then
   git clone https://github.com/renankanu/gather-pets-api.git ~/gather-pets-project/application/gather-pets-api
+  git clone https://github.com/renankanu/gather-pets-migration.git ~/gather-pets-project/application/gather-pets-migration
 fi
 
 # ace install-make
