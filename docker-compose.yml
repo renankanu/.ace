@@ -14,7 +14,7 @@ services:
 
   api:
     build: .
-    entrypoint: ./.docker/entrypoint.sh
+    entrypoint: .docker/install
     container_name: gather-pets-api
     restart: always
     environment:
