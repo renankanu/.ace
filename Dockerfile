@@ -10,4 +10,8 @@ RUN npm i -g @nestjs/cli@7.5.1
 
 USER node
 
+COPY ./.docker/entrypoint.sh /docker-entrypoint.sh
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+
 WORKDIR /home/node/app
