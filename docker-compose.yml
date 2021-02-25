@@ -1,8 +1,8 @@
-version: '3.8'
+version: "3.8"
 
 services:
   nginx:
-    container_name: 'gather-pets-nginx'
+    container_name: "gather-pets-nginx"
     image: nginx:stable
     restart: on-failure
     ports:
@@ -13,32 +13,27 @@ services:
       - api
 
   api:
-    image: node:latest
+    build: .
+    entrypoint: ./.docker/entrypoint.sh
     container_name: gather-pets-api
     restart: always
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    ports:
+      - 3000:3000
     volumes:
-      - ~/gather-pets-project/application/gather-pets-api:/usr/src/app
-    working_dir: /usr/src/app
-    # exec for PROD
-    #command: yarn start
-    command: yarn dev
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "5"
-      
+      - /Volumes/kanu/Developer/MyProjects/application/gather-pets-api:/home/node/app
+
   db:
-    container_name: 'gather-pets-db'
-    image: mysql:latest
+    container_name: "gather-pets-db"
+    image: mysql:5.7.33
     restart: always
     volumes:
-      - ~/gather-pets-project/data/mysql:/var/lib/mysql
+      - /Volumes/kanu/Developer/MyProjects/data/mysql:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
     ports:
       - "3306:3306"
-
 
 networks:
   default:
