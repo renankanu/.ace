@@ -32,7 +32,14 @@ if [ $1 == 'docker-up' ]; then
     docker-compose up -d
 fi
 
+# ace docker-up-build
+if [ $1 == 'docker-up-build' ]; then
+    cd .ace
+    docker-compose -d up --build
+fi
+
 # ace docker-down
 if [ $1 == 'docker-down' ]; then
+    cd .ace
     docker rm -f $(docker ps -aq)
 fi
