@@ -23,6 +23,8 @@ services:
       - 3000:3000
     volumes:
       - /Volumes/kanu/Developer/MyProjects/application/gather-pets-api:/home/node/app
+    depends_on:
+      - db
 
   db:
     container_name: "gather-pets-db"
