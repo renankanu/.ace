@@ -26,6 +26,6 @@ ace
 
 <span style="color:blue">*create-bridge* - create bridge network for docker</span>
 
-<span style="color:blue">*docker-up* - up the container with the applications</span>
+<span style="color:blue">*d-up* - up the container with the applications</span>
 
-<span style="color:blue">*docker-down* - down the container with the applications</span>
+<span style="color:blue">*d-down* - down the container with the applications</span>
