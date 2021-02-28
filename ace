@@ -22,24 +22,20 @@ fi
 
 # ace create-bridge
 if [ $1 == 'create-bridge' ]; then
-    cd .ace
     docker network create gather-pets-network
 fi
 
-# ace docker-up
-if [ $1 == 'docker-up' ]; then
-    cd .ace
+# ace d-up
+if [ $1 == 'd-up' ]; then
     docker-compose up -d
 fi
 
-# ace docker-up-build
-if [ $1 == 'docker-up-build' ]; then
-    cd .ace
-    docker-compose -d up --build
+# ace d-down
+if [ $1 == 'd-down' ]; then
+    docker rm -f $(docker ps -aq)
 fi
 
-# ace docker-down
-if [ $1 == 'docker-down' ]; then
-    cd .ace
-    docker rm -f $(docker ps -aq)
+# ace d-psa
+if [ $1 == 'd-psa' ]; then
+    docker ps -a
 fi
