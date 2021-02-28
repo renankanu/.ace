@@ -27,6 +27,7 @@ fi
 
 # ace d-up
 if [ $1 == 'd-up' ]; then
+    cd ~/.ace
     docker-compose up -d
 fi
 

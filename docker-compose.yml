@@ -21,7 +21,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - /Volumes/kanu/Developer/MyProjects/application/gather-pets-api:/home/node/app
+      - ~/gather-pets-project/application/gather-pets-api:/home/node/app
     depends_on:
       - db
 
@@ -30,7 +30,7 @@ services:
     image: mysql:5.7.33
     restart: always
     volumes:
-      - /Volumes/kanu/Developer/MyProjects/data/mysql:/var/lib/mysql
+      - ~/gather-pets-project/data/mysql:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
     ports:
